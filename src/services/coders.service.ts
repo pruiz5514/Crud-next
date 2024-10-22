@@ -33,7 +33,7 @@ export class CoderService {
 
   async edit(id:string, body:IEditCoder){
     try{
-        const editCoder = this.httpClient.put<string, IEditCoder>(`prueba/${id}`, body);
+        const editCoder = this.httpClient.put<ICoder,IEditCoder >(`prueba/${id}`, body);
         return editCoder
     } catch(error){
         console.log(error);
@@ -43,7 +43,7 @@ export class CoderService {
 
   async post(body:ICoder){
     try{
-        const coder = this.httpClient.post<string,ICoder>(`prueba`, body);
+        const coder = this.httpClient.post<ICoder,ICoder>(`prueba`, body);
         return coder;
     }catch(error){
         console.log(error);
